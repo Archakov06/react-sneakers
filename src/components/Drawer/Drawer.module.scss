@@ -1,0 +1,46 @@
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.1s ease-out, visibility 0.1s ease-out;
+  overflow: hidden;
+}
+
+.overlayVisible {
+  visibility: visible;
+  opacity: 1;
+
+  .drawer {
+    transform: translateX(0);
+  }
+}
+
+.drawer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 420px;
+  height: 100%;
+  right: 0;
+  background: #ffffff;
+  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+
+  .items {
+    flex: 1;
+    overflow: auto;
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    margin: 0;
+  }
+}
